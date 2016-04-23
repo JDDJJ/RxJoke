@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/common_error"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:visibility="gone">
+
+    <TextView
+        android:id="@+id/common_error_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/common_error"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/txt_20sp"/>
+
+    <Button
+        android:id="@+id/retry_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/retry_btn_32dp"
+        android:layout_below="@+id/common_error_txt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/space_12dp"
+        android:background="@drawable/button_stroke"
+        android:text="@string/click_retry"/>
+</RelativeLayout>

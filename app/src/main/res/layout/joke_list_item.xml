@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:padding="@dimen/space_12dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLength="14"
+            android:singleLine="true"
+            android:text="#万一我吹到别人家#"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/txt_20sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right|center_vertical"
+            android:paddingRight="@dimen/space_4dp"
+            >
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.3"
+                android:text="2016-04-08"
+                android:textSize="@dimen/space_12dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_12dp"
+        android:text="我去早市买菜，买了很多，都快拎不动了，这时就听一男人喊：\u201c美女，拎不动了吧？\u201d扭头一看，猪肉摊上一帅哥正看着我，我暗喜，难道帅哥看我长得漂亮要帮忙？只听帅哥说：\u201c美女买点猪肉吧"
+        android:textSize="@dimen/txt_18sp"
+        />
+</LinearLayout>
