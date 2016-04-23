@@ -30,7 +30,7 @@ RxJoke是一个基于Rxjava,Retrofit,Dagger2和Mvp设计的一款App。
 
 ## License
 
-    Copyright 2015 JDD
+    Copyright 2016 JDD
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
