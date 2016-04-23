@@ -1,4 +1,5 @@
 # RxJoke
+
 =============================================
 RxJoke是一个基于Rxjava,Retrofit,Dagger2和Mvp设计的一款App。
 
@@ -41,6 +42,3 @@ RxJoke是一个基于Rxjava,Retrofit,Dagger2和Mvp设计的一款App。
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
-
-[1]:http://fir.im/idaily
