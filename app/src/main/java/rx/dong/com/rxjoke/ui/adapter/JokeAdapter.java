@@ -1,6 +1,7 @@
 package rx.dong.com.rxjoke.ui.adapter;
 
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,8 @@ public class JokeAdapter extends RecyclerView.Adapter {
         JokeViewHolder jokeViewHolder = (JokeViewHolder) holder;
         jokeViewHolder.title.setText("#" + jokeList.get(position).getTitle() + "#");
         jokeViewHolder.time.setText(TimeUtil.getDateBySplit(jokeList.get(position).getCt()));
-        jokeViewHolder.content.setText(jokeList.get(position).getText());
+        /*使html中<标签>得以转化*/
+        jokeViewHolder.content.setText(Html.fromHtml(jokeList.get(position).getText().toString()));
 
 
     }

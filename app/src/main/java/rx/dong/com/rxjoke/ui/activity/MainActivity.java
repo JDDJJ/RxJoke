@@ -118,6 +118,8 @@ public class MainActivity extends BaseActivity implements JokeView,
     public void showError(String msg, View.OnClickListener onClickListener) {
         super.showError(msg, onClickListener);
         commonError.setVisibility(View.VISIBLE);
+        recordRecycleview.setLoading(false);
+        jokeRefreshLayout.setRefreshing(false);
     }
 
     @OnClick(R.id.retry_btn)

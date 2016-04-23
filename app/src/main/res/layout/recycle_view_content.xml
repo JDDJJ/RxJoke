@@ -5,10 +5,16 @@
     android:layout_height="match_parent"
     >
 
-    <rx.dong.com.rxjoke.common.AutoLoadRecylerView
-        android:id="@+id/record_recycleview"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/joke_refresh_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content">
+
+        <rx.dong.com.rxjoke.common.AutoLoadRecylerView
+            android:id="@+id/record_recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
     <include layout="@layout/common_error"/>
 </FrameLayout>

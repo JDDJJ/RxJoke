@@ -5,13 +5,7 @@
     android:layout_height="match_parent"
     >
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/joke_refresh_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <include
-            layout="@layout/recycle_view_content"
-            />
-    </android.support.v4.widget.SwipeRefreshLayout>
+    <include
+        layout="@layout/recycle_view_content"
+        />
 </LinearLayout>

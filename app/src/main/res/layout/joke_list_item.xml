@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:maxLength="14"
+            android:maxLength="12"
             android:singleLine="true"
             android:text="#万一我吹到别人家#"
             android:textColor="@color/colorAccent"
