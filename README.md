@@ -3,7 +3,7 @@ RxJoke
 =============================================
 RxJoke是一个基于Rxjava,Retrofit,Dagger2和Mvp设计的一款App。
 
-[![Get it on Google Play](art/download.png)][1]
+[More info!](http://jdd.coding.me/ "More info")
 
 ##项目结构
  * MVP框架。
@@ -21,11 +21,11 @@ RxJoke是一个基于Rxjava,Retrofit,Dagger2和Mvp设计的一款App。
 * android support design
 
 ##截图
-<img src="art/1.png" width="308" height="548"/>
-<img src="art/2.png" width="308" height="548"/>
+<img src="http://7xsffo.com1.z0.glb.clouddn.com/rxjoke_copyright.png" width="308" height="548"/>
+<img src="http://7xsffo.com1.z0.glb.clouddn.com/rxjoke_main.png" width="308" height="548"/>
 
-<img src="art/3.png" width="308" height="548"/>
-<img src="art/4.png" width="308" height="548"/>
+<img src="http://7xsffo.com1.z0.glb.clouddn.com/rxjoke_icon.png" width="308" height="548"/>
+<img src="http://7xsffo.com1.z0.glb.clouddn.com/rxjoke_error.png" width="308" height="548"/>
 
 ## License
 
