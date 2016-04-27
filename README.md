@@ -4,7 +4,7 @@
 
 RxJoke是一个基于Rxjava,Retrofit,Dagger2和Mvp设计的一款App。
 
-[More info!](http://jdd.coding.me/ "More info")
+[More info!](http://www.jianshu.com/p/9430eca553a5 "More info")
 
 ##项目结构
  * MVP框架。
