@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import rx.dong.com.rxjoke.R;
 import rx.dong.com.rxjoke.common.AutoLoadRecylerView;
-import rx.dong.com.rxjoke.common.AutoLoadRecylerView.loadMoreListener;
+import rx.dong.com.rxjoke.common.AutoLoadRecylerView.LoadMoreListener;
 import rx.dong.com.rxjoke.common.DividerItemDecoration;
 import rx.dong.com.rxjoke.model.ContentlistEntity;
 import rx.dong.com.rxjoke.presenter.JokePresenter;
@@ -29,7 +29,7 @@ import rx.dong.com.rxjoke.ui.view.JokeView;
  * Created by JDD on 2016/4/8.
  */
 public class MainActivity extends BaseActivity implements JokeView,
-        SwipeRefreshLayout.OnRefreshListener, loadMoreListener {
+        SwipeRefreshLayout.OnRefreshListener, LoadMoreListener {
 
     @Bind(R.id.record_recycleview)
     AutoLoadRecylerView recordRecycleview;
@@ -63,8 +63,8 @@ public class MainActivity extends BaseActivity implements JokeView,
         jokeRefreshLayout.setOnRefreshListener(this);
         layoutManager = new LinearLayoutManager(this);
         recordRecycleview.setLayoutManager(layoutManager);
-        recordRecycleview.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration
-                .VERTICAL_LIST));
+        recordRecycleview.addItemDecoration(new DividerItemDecoration(
+                this, DividerItemDecoration.VERTICAL_LIST));
         recordRecycleview.setLoadMoreListener(this);
     }
 
