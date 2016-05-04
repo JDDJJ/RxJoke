@@ -1,6 +1,7 @@
 package rx.dong.com.rxjoke.ui.activity;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
+import com.hannesdorfmann.mosby.mvp.MvpActivity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,14 +22,13 @@ import rx.dong.com.rxjoke.common.AutoLoadRecylerView.LoadMoreListener;
 import rx.dong.com.rxjoke.common.DividerItemDecoration;
 import rx.dong.com.rxjoke.model.ContentlistEntity;
 import rx.dong.com.rxjoke.presenter.JokePresenter;
-import rx.dong.com.rxjoke.ui.BaseActivity;
 import rx.dong.com.rxjoke.ui.adapter.JokeAdapter;
 import rx.dong.com.rxjoke.ui.view.JokeView;
 
 /**
  * Created by JDD on 2016/4/8.
  */
-public class MainActivity extends BaseActivity implements JokeView,
+public class MainActivity extends MvpActivity<JokeView, JokePresenter> implements JokeView,
         SwipeRefreshLayout.OnRefreshListener, LoadMoreListener {
 
     @Bind(R.id.record_recycleview)
@@ -41,7 +41,6 @@ public class MainActivity extends BaseActivity implements JokeView,
     RelativeLayout commonError;
     @Bind(R.id.joke_refresh_layout)
     SwipeRefreshLayout jokeRefreshLayout;
-    private JokePresenter jokePresenter;
     private LinearLayoutManager layoutManager;
     private int page = 1;
     private List<ContentlistEntity> jokeList;
@@ -56,7 +55,12 @@ public class MainActivity extends BaseActivity implements JokeView,
         initData();
         loadData();
 
+    }
 
+    @NonNull
+    @Override
+    public JokePresenter createPresenter() {
+        return new JokePresenter();
     }
 
     private void initView() {
@@ -73,12 +77,10 @@ public class MainActivity extends BaseActivity implements JokeView,
         jokeAdapter = new JokeAdapter(jokeList);
         recordRecycleview.setAdapter(jokeAdapter);
 
-        jokePresenter = new JokePresenter();
-        jokePresenter.attachView(this);
     }
 
     private void loadData() {
-        jokePresenter.loadList(page);
+        getPresenter().loadList(page);
         page++;
     }
 
@@ -116,7 +118,6 @@ public class MainActivity extends BaseActivity implements JokeView,
 
     @Override
     public void showError(String msg, View.OnClickListener onClickListener) {
-        super.showError(msg, onClickListener);
         commonError.setVisibility(View.VISIBLE);
         recordRecycleview.setLoading(false);
         jokeRefreshLayout.setRefreshing(false);
@@ -130,6 +131,6 @@ public class MainActivity extends BaseActivity implements JokeView,
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        jokePresenter.detachView();
+        getPresenter().detachView(true);
     }
 }
