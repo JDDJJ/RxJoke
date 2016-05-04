@@ -10,6 +10,6 @@ import rx.dong.com.rxjoke.model.ContentlistEntity;
 public interface JokeView extends MvpView {
     void refresh(List<ContentlistEntity> data);
 
-    void loadMore(List<ContentlistEntity>  data);
+    void loadMore(List<ContentlistEntity> data);
 
 }

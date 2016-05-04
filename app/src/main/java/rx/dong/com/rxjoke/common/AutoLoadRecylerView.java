@@ -14,21 +14,15 @@ public class AutoLoadRecylerView extends RecyclerView {
     private AutoLoadScroller autoLoadScroller;
     private boolean isLoading = false;
 
-    public interface loadMoreListener {
-        void onLoadMore();
-    }
-
     public AutoLoadRecylerView(Context context) {
         this(context, null);
     }
-
 
     public AutoLoadRecylerView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         autoLoadScroller = new AutoLoadScroller();
         addOnScrollListener(autoLoadScroller);
     }
-
 
     public void setLoadMoreListener(AutoLoadRecylerView.loadMoreListener loadMoreListener) {
         this.loadMoreListener = loadMoreListener;
@@ -44,6 +38,10 @@ public class AutoLoadRecylerView extends RecyclerView {
 
     public void removeAutoScroller() {
         removeOnScrollListener(autoLoadScroller);
+    }
+
+    public interface loadMoreListener {
+        void onLoadMore();
     }
 
     private class AutoLoadScroller extends OnScrollListener {
