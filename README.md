@@ -22,7 +22,7 @@ RxJoke是一个基于Rxjava,Retrofit,Dagger2和Mvp设计的一款App。
 * android support design
 
 ##截图
-<img src="http://7xsffo.com1.z0.glb.clouddn.com/rxjoke_copyright.png" width="308" height="548"/>
+<img src="http://7xsffo.com1.z0.glb.clouddn.com/app_copyright_jdd.png" width="308" height="548"/>
 <img src="http://7xsffo.com1.z0.glb.clouddn.com/rxjoke_main.png" width="308" height="548"/>
 
 <img src="http://7xsffo.com1.z0.glb.clouddn.com/rxjoke_icon.png" width="308" height="548"/>
