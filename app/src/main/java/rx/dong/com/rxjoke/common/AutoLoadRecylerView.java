@@ -10,18 +10,13 @@ import android.util.AttributeSet;
  * Created by JDD on 2016/4/8.
  */
 public class AutoLoadRecylerView extends RecyclerView {
-    private loadMoreListener loadMoreListener;
+    private LoadMoreListener loadMoreListener;
     private AutoLoadScroller autoLoadScroller;
     private boolean isLoading = false;
-
-    public interface loadMoreListener {
-        void onLoadMore();
-    }
 
     public AutoLoadRecylerView(Context context) {
         this(context, null);
     }
-
 
     public AutoLoadRecylerView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -29,8 +24,7 @@ public class AutoLoadRecylerView extends RecyclerView {
         addOnScrollListener(autoLoadScroller);
     }
 
-
-    public void setLoadMoreListener(AutoLoadRecylerView.loadMoreListener loadMoreListener) {
+    public void setLoadMoreListener(LoadMoreListener loadMoreListener) {
         this.loadMoreListener = loadMoreListener;
     }
 
@@ -44,6 +38,10 @@ public class AutoLoadRecylerView extends RecyclerView {
 
     public void removeAutoScroller() {
         removeOnScrollListener(autoLoadScroller);
+    }
+
+    public interface LoadMoreListener {
+        void onLoadMore();
     }
 
     private class AutoLoadScroller extends OnScrollListener {

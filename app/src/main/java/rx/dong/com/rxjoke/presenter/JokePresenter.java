@@ -1,5 +1,6 @@
 package rx.dong.com.rxjoke.presenter;
 
+import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 import com.orhanobut.logger.Logger;
 
 import java.util.List;
@@ -17,17 +18,7 @@ import rx.schedulers.Schedulers;
 /**
  * Created by JDD on 2016/4/21 0021.
  */
-public class JokePresenter extends BasePresenter<JokeView> {
-
-    @Override
-    public void attachView(JokeView mvpView) {
-        super.attachView(mvpView);
-    }
-
-    @Override
-    public void detachView() {
-        super.detachView();
-    }
+public class JokePresenter extends MvpBasePresenter<JokeView> {
 
     public void loadList(final int page) {
         RxService.createApi(JokeApi.class)
@@ -49,18 +40,17 @@ public class JokePresenter extends BasePresenter<JokeView> {
                     @Override
                     public void onError(Throwable e) {
                         Logger.e(e.getMessage());
-                        getMvpView().showError(null, null);
+                        getView().showError(null, null);
                     }
 
                     @Override
                     public void onNext(List<ContentlistEntity> contentlistEntities) {
                         if (page == 1) {
-                            getMvpView().refresh(contentlistEntities);
+                            getView().refresh(contentlistEntities);
                         } else {
-                            getMvpView().loadMore(contentlistEntities);
+                            getView().loadMore(contentlistEntities);
                         }
                     }
                 });
-
     }
 }
